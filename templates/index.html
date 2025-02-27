@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Disease Detection</title>
+</head>
+
+<body class="bg-gradient-to-br from-purple-600 to-pink-500 flex items-center justify-center min-h-screen">
+    <div class="bg-white shadow-xl rounded-lg p-8 w-96">
+        <h2 class="text-3xl font-bold mb-6 text-center text-purple-700">Disease Detection</h2>
+        <form action="/predict" method="POST" enctype="multipart/form-data">
+            <div class="mb-4">
+                <label class="block text-purple-700 text-sm font-semibold mb-2" for="cancer_type">
+                    Select Disease Type
+                </label>
+                <select name="cancer_type" id="cancer_type" class="shadow appearance-none border border-purple-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    <option value="brain">Brain Tumor</option>
+                    <option value="chest">Pneumonia</option>
+                </select>
+            </div>
+            <div class="mb-4">
+                <label class="block text-purple-700 text-sm font-semibold mb-2" for="image">
+                    Upload Image
+                </label>
+                <input type="file" name="image" id="image" accept="image/*" class="shadow appearance-none border border-purple-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-500">
+            </div>
+            <div class="flex items-center justify-center">
+                <button type="submit" class="bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 text-white font-bold py-2 px-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-purple-300">
+                    Predict
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
